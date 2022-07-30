@@ -238,7 +238,10 @@ ro.vendor.sim_me_lock_mode=3
 telephony.active_modems.max_count=2
 telephony.lteOnCdmaDevice=1
 
-# Wifi
+# Thermal
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+
+# WiFi
 ro.vendor.wfd.dummy.enable=0
 ro.vendor.wfd.iframesize.level=0
 ro.vendor.wifi.sap.concurrent.iface=ap1
