@@ -3,6 +3,9 @@ ro.audio.silent=0
 ro.audio.usb.period_us=16000
 ro.camera.sound.forced=0
 
+# Bluetooth
+persist.bluetooth.bluetooth_audio_hal.disabled=true
+
 # Blur
 ro.sf.blurs_are_expensive=1
 ro.surface_flinger.supports_background_blur=1
@@ -23,6 +26,11 @@ ro.kernel.zio=38,108,105,16
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# MIUI Camera
+ro.miui.notch=1
+ro.product.mod_device=xaga_global
+camera.lab.options=true
 
 # USB
 ro.sys.usb.bicr=no
