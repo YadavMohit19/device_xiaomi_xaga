@@ -246,15 +246,15 @@
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">100%</fraction>
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300%</fraction>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">4000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">8000</integer>
 
     <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -271,9 +271,9 @@
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">16</integer>
 
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingDefaultFloat instead -->
-    <integer name="config_screenBrightnessSettingDefault">307</integer>
+    <!-- Default screen brightness setting.
+         Must be in the range specified by minimum and maximum. -->
+     <integer name="config_screenBrightnessSettingDefault">102</integer>
 
     <!-- Maximum screen brightness allowed by the power manager.
          -2 is invalid so setting will resort to int value specified above.
@@ -294,17 +294,7 @@
          than this threshold, it is applied. See the config_screenThresholdLevels description for
          how the constraint value is chosen. -->
     <integer-array name="config_screenBrighteningThresholds">
-        <item>0</item>
-    </integer-array>
-
-    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_screenThresholdLevels. The darkening threshold is calculated as
-         screenBrightness * (1.0f - CONSTRAINT_VALUE). When the new screen brightness is lower than
-         this threshold, it is applied. See the config_screenThresholdLevels description for how
-         the constraint value is chosen. -->
-    <integer-array name="config_screenDarkeningThresholds">
-        <item>0</item>
+        <item>100</item>
     </integer-array>
 
 <!-- Display -->
