@@ -76,75 +76,89 @@
         <item>4000</item>
     </integer-array>
 
-    <!-- Array of output values for LCD backlight corresponding to the lux values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>18</item>
-        <item>35</item>
-        <item>68</item>
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>10.45935</item>   <!-- 0-1 -->
+        <item>29.25559</item>   <!-- 1-2 -->
+        <item>34.240692</item>  <!-- 2-3 -->
+        <item>37.514347</item>  <!-- 3-4 -->
+        <item>40.018696</item>  <!-- 4-8 -->
+        <item>46.885098</item>  <!-- 8-12 -->
+        <item>51.626434</item>  <!-- 12-20 -->
+        <item>58.610405</item>  <!-- 20-33 -->
+        <item>66.890915</item>  <!-- 33-55 -->
+        <item>77.61644</item>   <!-- 55-90 -->
+        <item>90.221886</item>  <!-- 90-148 -->
+        <item>105.80314</item>  <!-- 148-245 -->
+        <item>126.073845</item> <!-- 245-403 -->
+        <item>154.16931</item>  <!-- 403-665 -->
+        <item>191.83717</item>  <!-- 665-1097 -->
+        <item>240.74442</item>  <!-- 1097-1808 -->
+        <item>294.84857</item>  <!-- 1808-2981 -->
+        <item>348.05453</item>  <!-- 2981-5000 -->
+        <item>394.98703</item>  <!-- 5000+ -->
+    </array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
         <item>105</item>
-        <item>130</item>
-        <item>170</item>
+        <item>120</item>
+        <item>135</item>
+        <item>150</item>
+        <item>165</item>
+        <item>180</item>
+        <item>195</item>
+        <item>210</item>
+        <item>225</item>
         <item>240</item>
-        <item>300</item>
-        <item>320</item>
-        <item>354</item>
-        <item>380</item>
-        <item>495</item>
-        <item>400</item>
-        <item>404</item>
-        <item>407</item>
-        <item>408</item>
-        <item>410</item>
-        <item>412</item>
-        <item>414</item>
-        <item>416</item>
-        <item>417</item>
-        <item>419</item>
-        <item>421</item>
-        <item>423</item>
-        <item>426</item>
-        <item>430</item>
-        <item>437</item>
-        <item>444</item>
-        <item>453</item>
-        <item>455</item>
-        <item>463</item>
-        <item>470</item>
-        <item>477</item>
-        <item>484</item>
-        <item>490</item>
-        <item>496</item>
-        <item>503</item>
-        <item>510</item>
-        <item>519</item>
-        <item>527</item>
-        <item>532</item>
-        <item>542</item>
-        <item>548</item>
-        <item>557</item>
-        <item>565</item>
-        <item>610</item>
-        <item>660</item>
-        <item>730</item>
-        <item>780</item>
-        <item>900</item>
-        <item>1025</item>
-        <item>1150</item>
-        <item>1280</item>
-        <item>1415</item>
-        <item>1590</item>
-        <item>1760</item>
-        <item>1900</item>
-        <item>2000</item>
-        <item>2020</item>
-        <item>2030</item>
-        <item>2040</item>
-        <item>2047</item>
+        <item>255</item>
     </integer-array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>0</item>
+        <item>26.11</item>
+        <item>50.5</item>
+        <item>74.17</item>
+        <item>96.89</item>
+        <item>118.3</item>
+        <item>139.8</item>
+        <item>162.9</item>
+        <item>189.8</item>
+        <item>217.4</item>
+        <item>240.4</item>
+        <item>265.3</item>
+        <item>288.7</item>
+        <item>316</item>
+        <item>340.8</item>
+        <item>357.9</item>
+        <item>376.2</item>
+        <item>392.9</item>
+    </array>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
@@ -537,5 +551,28 @@
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
+    <!-- Location indicator excludelist -->
+    <string-array name="config_locationIndicatorExcludelist" translatable="false">
+        <item>com.mediatek.ims</item>
+    </string-array>
+
+    <!-- Whether to show min refresh rate in display settings -->
+    <bool name="config_show_min_refresh_rate_switch">true</bool>
+
+    <!-- Whether to show peak refresh rate in display settings -->
+    <bool name="config_show_peak_refresh_rate_switch">true</bool>
+
+    <!-- Whether to show battery health -->
+    <bool name="config_show_battery_health">true</bool>
+
+    <!-- Define battery design capacity node -->
+    <string name="config_battery_capacity_design">/sys/class/power_supply/bms/charge_full_design</string>
+
+    <!-- Define battery now capacity node -->
+    <string name="config_battery_capacity_now">/sys/class/power_supply/bms/charge_full</string>
+
+    <!-- Define battery charge cycle node -->
+    <string name="config_battery_charge_cycle">/sys/class/power_supply/bms/cycle_count</string>
 
 </resources>

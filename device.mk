@@ -243,9 +243,6 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay\
 
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-kscop
-
 PRODUCT_PACKAGES += \
     FrameworkResOverlay \
     NotchBarKiller \
