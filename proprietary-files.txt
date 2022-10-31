@@ -2904,6 +2904,10 @@ vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature@1.0-service.rc
 -vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+vendor/lib/hw/vibrator.default.so
+vendor/lib/libvibrator.so
+vendor/lib64/hw/vibrator.default.so
+vendor/lib64/libvibrator.so
 vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
 
 # Vendor Modules
