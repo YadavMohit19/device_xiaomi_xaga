@@ -54,23 +54,13 @@ vendor/lib64/libbwc.so
 vendor/lib64/libladder.so
 
 # Audio configs
-etc/audio_effects.conf
-vendor/etc/a2dp_audio_policy_configuration.xml
-vendor/etc/a2dp_in_audio_policy_configuration.xml
-vendor/etc/audio_effects.xml
-vendor/etc/audio_policy_configuration.xml
 vendor/etc/audio_policy_configuration_a2dp_offload_disabled.xml
 vendor/etc/audio_policy_configuration_a2dp_offload_disabled_cg_enabled.xml
 vendor/etc/audio_policy_configuration_a2dp_offload_enable_cg_enable.xml
-vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
-vendor/etc/audio_policy_volumes.xml
 vendor/etc/bluetooth_a2dp_offload_ums_offload_audio_policy_configuration.xml
-vendor/etc/bluetooth_audio_policy_configuration.xml
 vendor/etc/bluetooth_offload_audio_policy_configuration.xml
 vendor/etc/bluetooth_ums_offload_audio_policy_configuration.xml
 vendor/etc/default_volume_tables.xml
-vendor/etc/r_submix_audio_policy_configuration.xml
-vendor/etc/usb_audio_policy_configuration.xml
 
 # Audio effect
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
@@ -1729,8 +1719,6 @@ vendor/etc/MNL_Config.xml
 vendor/etc/VideoLog_dynamic.xml
 vendor/etc/apdb/APDB_MT6895___W2152
 vendor/etc/apdb/APDB_MT6895___W2152_ENUM
-vendor/etc/audio_device.xml
-vendor/etc/audio_policy.conf
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/cit_param_config.json
@@ -1875,7 +1863,6 @@ vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/task_profiles.json
 vendor/etc/throttle.sh
-vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
 -vendor/etc/vintf/manifest/AHBF@2.1-service.xml
 -vendor/etc/vintf/manifest/fod.xml
