@@ -103,7 +103,7 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 
 # Display
 debug.sf.disable_backpressure=1
-debug.sf.enable_hwc_vds=1
+debug.sf.enable_hwc_vds=0
 debug.sf.late.sf.duration=27600000
 debug.sf.late.app.duration=20000000
 debug.sf.early.sf.duration=27600000
