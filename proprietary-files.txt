@@ -1076,11 +1076,6 @@ vendor/lib64/libdlbdsservice.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
-# Dumpstate
-vendor/bin/hw/android.hardware.dumpstate@1.1-service.xiaomi
-vendor/etc/init/android.hardware.dumpstate@1.1-service.xiaomi.rc
--vendor/etc/vintf/manifest/android.hardware.dumpstate@1.1-service.xiaomi.xml
-
 # Fingerprint
 vendor/lib/hw/fingerprint.fpc_isee.so
 vendor/lib/hw/fingerprint.goodix.so
@@ -1585,9 +1580,6 @@ lib64/extractors/libmtkmp3extractor.so
 lib64/extractors/libmtkmpeg2extractor.so
 
 # Miscellaneous
--vendor/app/IFAAService/IFAAService.apk
--vendor/app/MipayService/MipayService.apk
--vendor/app/SensorTestTool/SensorTestTool.apk
 vendor/bin/AgentTest
 vendor/bin/DFtool
 vendor/bin/MI_IC
@@ -2413,7 +2405,6 @@ vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
 
-
 # Miscellaneous
 vendor/bin/FlashCompareAPI
 vendor/etc/device_sar_config.xml
@@ -2485,24 +2476,11 @@ vendor/lib/mt6895/libneuralnetworks_sl_driver_mtk_prebuilt.so
 vendor/lib64/mt6895/libneuralnetworks_sl_driver_mtk_prebuilt.so
 
 # Payment (Xiaomi)
-vendor/etc/init/vendor.xiaomi.hardware.mfidoca@1.0-iseeservice.rc
-vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-iseeservice.rc
 vendor/etc/init/vendor.xiaomi.hardware.mtdservice@1.2-iseeservice.rc
-vendor/etc/init/vendor.xiaomi.hardware.tidaservice@1.1-iseeservice.rc
-vendor/lib/vendor.xiaomi.hardware.mfidoca@1.0.so
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.1.so
 vendor/lib/vendor.xiaomi.hardware.mtdservice@1.0.so
-vendor/lib/vendor.xiaomi.hardware.tidaservice@1.0.so
-vendor/lib/vendor.xiaomi.hardware.tidaservice@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
-vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
 
 # Power
 -vendor/lib/libpowerhal.so
@@ -2549,14 +2527,6 @@ vendor/lib64/librilfusion.so
 vendor/lib64/libsysenv.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
-
-# SLA
-vendor/bin/hw/vendor.qti.sla.service@1.0-service
-vendor/etc/init/vendor.qti.sla.service@1.0-service.rc
-vendor/lib/vendor.qti.sla.service@1.0-impl.so
-vendor/lib/vendor.qti.sla.service@1.0.so
-vendor/lib64/vendor.qti.sla.service@1.0-impl.so
-vendor/lib64/vendor.qti.sla.service@1.0.so
 
 # SPN
 etc/apns-conf.xml
