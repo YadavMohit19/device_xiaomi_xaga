@@ -48,6 +48,12 @@
         <MaxValue>100</MaxValue>
         <MinValue>0</MinValue>
     </CMD>
+    <CMD name="PERF_RES_SCHED_BOOST" id="0x01410000">
+        <Entry path="/sys/devices/system/cpu/sched/sched_boost"></Entry>
+        <Compare>more</Compare>
+        <MaxValue>6</MaxValue>
+        <MinValue>0</MinValue>
+    </CMD>
     <CMD name="PERF_RES_SCHED_PREFER_IDLE_FG" id="0x01404100">
         <Entry path="/dev/cpuctl/foreground/cpu.uclamp.latency_sensitive"></Entry>
         <Compare>more</Compare>
