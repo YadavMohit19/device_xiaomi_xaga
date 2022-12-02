@@ -55,14 +55,41 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        lib64/libsink.so)
-            "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
-            ;;
         vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service)
             sed -i "s/\x00\x2F\x76\x69\x62\x72\x61\x74\x6F\x72\x66\x65\x61\x74\x75\x72\x65\x00/\x00\x2F\x64\x65\x66\x61\x75\x6C\x74\x00\x00\x00\x00\x00\x00\x00\x00\x00/g" "${2}"
             ;;
         vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml)
             sed -i "s/vibratorfeature/default/g" "${2}"
+            ;;
+        vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+            ;&
+        vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+            "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
+            ;;
+        vendor/bin/hw/android.hardware.gnss-service.mediatek)
+            ;&
+        vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
+           "$PATCHELF" --replace-needed android.hardware.gnss-V1-ndk_platform.so android.hardware.gnss-V1-ndk.so "$2"
+            ;;
+        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
+            ;&
+        vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+           "$PATCHELF" --replace-needed libavservices_minijail_vendor.so libavservices_minijail.so "$2"
+            ;;
+        vendor/bin/mtk_agpsd)
+           "$PATCHELF" --replace-needed libcrypto.so libcrypto-v32.so "$2"
+            ;;
+        vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc)
+            sed -i '/vts/Q' "$2"
+            ;;
+        vendor/lib*/libmtkcam_stdutils.so)
+            "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
+            ;;
+        odm/lib*/libui)
+            "$PATCHELF" --replace-needed android.hardware.graphics.common-V2-ndk_platform.so android.hardware.graphics.common-V2-ndk.so "$2"
+            ;;
+        vendor/lib64/libkeystore-engine-wifi-hidl.so)
+            "$PATCHELF" --replace-needed android.system.keystore2-V1-ndk_platform.so android.system.keystore2-V1-ndk.so "$2"
             ;;
     esac
 }

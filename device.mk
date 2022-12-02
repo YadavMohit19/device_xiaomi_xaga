@@ -10,8 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
-# Include GSI keys
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -50,8 +50,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.soundtrigger@2.3-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
-    audio.a2dp.default \
+    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -73,19 +72,16 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1 \
     android.hardware.soundtrigger@2.2
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.a2dp_offload.disabled=true
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -132,11 +128,12 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.composer@2.3-service \
     libdrm.vendor \
-    libvulkan
+    libvulkan \
+    android.hardware.graphics.common-V2-ndk.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm-service.clearkey \
 
 # Dumpstate
 PRODUCT_PACKAGES += \
@@ -170,6 +167,7 @@ PRODUCT_PACKAGES += \
 # Gnss
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss-V1-ndk.vendor \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss.measurement_corrections@1.1.vendor
 
@@ -333,7 +331,8 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
-    android.hardware.power-service-mediatek
+    android.hardware.power-service-mediatek \
+    android.hardware.power-V2-ndk.vendor
 
 # Power configs
 PRODUCT_COPY_FILES += \
@@ -428,16 +427,23 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-ndk_platform.vendor
+    android.hardware.vibrator-V1-ndk.vendor
 
 # VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 31
+PRODUCT_EXTRA_VNDK_VERSIONS := 32
+
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v32.so
 
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
     android.hardware.tetheroffload.control@1.1.vendor \
     android.hardware.wifi.hostapd@1.3.vendor \
+    android.system.keystore2-V1-ndk.vendor \
     android.hardware.wifi.supplicant@1.4.vendor
 
 # USB
