@@ -1,5 +1,3 @@
-type smartcharging, domain;
-type smartcharging_exec, file_type, exec_type, vendor_file_type;
 
 type_transition init smartcharging_exec:process smartcharging;
 

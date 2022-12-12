@@ -6,8 +6,6 @@ type DualCameraCal_exec, file_type, exec_type, vendor_file_type;
 type OisCal, domain;
 type OisCal_exec, file_type, exec_type, vendor_file_type;
 
-type data_vendor_flash_file, file_type, data_file_type;
-type data_vendor_flicker_file, file_type, data_file_type;
 
 init_daemon_domain(DualCameraCal)
 init_daemon_domain(OisCal)

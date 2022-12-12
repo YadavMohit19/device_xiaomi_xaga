@@ -1,4 +1,3 @@
-type sysfs_chg2_present, fs_type, sysfs_type;
 
 allow hal_health sysfs_usb_supply:dir { ioctl read getattr lock open watch watch_reads search };
 allow hal_health sysfs_usb_supply:file { ioctl read getattr lock map open watch watch_reads };

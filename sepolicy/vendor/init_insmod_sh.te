@@ -1,5 +1,3 @@
-type init_insmod_sh, domain;
-type init_insmod_sh_exec, file_type, exec_type, vendor_file_type;
 
 type_transition init init_insmod_sh_exec:process init_insmod_sh;
 
