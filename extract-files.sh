@@ -58,6 +58,11 @@ function blob_fixup() {
         lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
             ;;
+        vendor/lib/hw/mt6895/vendor.mediatek.hardware.pq@2.13-impl.so)
+            ;&
+        vendor/lib64/hw/mt6895/vendor.mediatek.hardware.pq@2.13-impl.so)
+            "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
+            ;;
         vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service)
             sed -i "s/\x00\x2F\x76\x69\x62\x72\x61\x74\x6F\x72\x66\x65\x61\x74\x75\x72\x65\x00/\x00\x2F\x64\x65\x66\x61\x75\x6C\x74\x00\x00\x00\x00\x00\x00\x00\x00\x00/g" "${2}"
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
@@ -67,6 +72,9 @@ function blob_fixup() {
             ;;
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service | vendor/bin/hw/mt6895/camerahalserver | vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
+            ;;
+        vendor/lib/mt6895/libmtkcam_stdutils.so | vendor/lib64/mt6895/libmtkcam_stdutils.so)
+            "$PATCHELF" --replace-needed libutils.so libutils-v32.so "$2"
             ;;
     esac
 }
