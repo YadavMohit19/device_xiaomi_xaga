@@ -1453,8 +1453,9 @@ vendor/lib64/libkeymint.so
 vendor/lib64/wechat.beanpod.so
 
 # MIUI Camera
--product/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Snap,GoogleCameraGo,Camera2|b27c18935950b542475e09c6e035de61461503ae
+-product/priv-app/MiuiCamera/MiuiCamera.apk
 lib64/libcamera_algoup_jni.xiaomi.so
+lib64/libcamera_client.so
 lib64/libcamera_ispinterface_jni.xiaomi.so
 lib64/libcamera_mianode_jni.xiaomi.so
 lib64/libcameraservice.so
