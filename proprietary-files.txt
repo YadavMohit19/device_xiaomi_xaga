@@ -192,6 +192,8 @@ vendor/etc/audio_param/tfa98xx_ringtone.bin
 vendor/etc/audio_param/tfa98xx_voice.bin
 
 # Bluetooth
+lib64/libaptXHD_encoder.so
+lib64/libaptX_encoder.so
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
