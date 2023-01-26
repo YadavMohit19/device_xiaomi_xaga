@@ -1320,6 +1320,11 @@ vendor/firmware/soc_fm_v1_coeff.bin
 vendor/firmware/soc_fm_v1_patch.bin
 vendor/firmware/tfa98xx.cnt
 vendor/firmware/wifi.cfg
+=======
+# Dolby - from OnePlus SM8150 device
+-system_ext/priv-app/daxService/daxService.apk|56ed0f574ef7d760e5404d8acd309a3c48eb28a5
+-system_ext/priv-app/DaxUI/DaxUI.apk|21426b8bf9a1850e52c96ad52c47c7797144d969
+>>>>>>> 3b34243 (xaga: Kang dolby daxservice from oneplus sm8150)
 
 # Firmware
 vendor/firmware/99_POCO_RTP.bin
