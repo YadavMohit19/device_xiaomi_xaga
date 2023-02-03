@@ -479,3 +479,6 @@ vendor.hbm.enable=true
 vendor.mtk.vdec.waitkeyframeforplay=9
 vendor.performance.frs.temp_src=/sys/class/thermal/thermal_message/board_sensor_temp
 ro.vendor.mtk_thermal_2_0=1
+
+# Zygote
+zygote.critical_window.minute=10
