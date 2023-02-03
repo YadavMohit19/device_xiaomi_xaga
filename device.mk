@@ -273,6 +273,8 @@ PRODUCT_PACKAGES += \
     FrameworkResOverlay \
     NotchBarKiller \
     SystemUIOverlay \
+    XagaProInFrameworkResOverlay \
+    SettingsOverlay\
     TetheringConfigOverlay \
     WifiOverlay
 
