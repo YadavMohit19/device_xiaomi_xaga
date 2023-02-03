@@ -48,6 +48,9 @@ TARGET_USES_64_BIT_BINDER := true
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := xaga,xagapro,xagain,xagaproin
+
 # Audio
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
