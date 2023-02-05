@@ -122,6 +122,7 @@ drm.service.enabled=true
 ro.vendor.mtk_widevine_drm_l1_support=1
 
 # Display
+debug.hwui.skia_atrace_enabled=false
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=0
 debug.sf.late.sf.duration=30000000
