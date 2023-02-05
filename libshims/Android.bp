@@ -28,9 +28,3 @@ cc_library_shared {
         "libmediametrics_headers",
     ],
 }
-
-java_library {
-    name: "ImsServiceBase",
-    installable: true,
-    srcs: ["ImsServiceBase.java"],
-}
