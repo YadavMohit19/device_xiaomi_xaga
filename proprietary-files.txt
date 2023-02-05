@@ -1461,6 +1461,8 @@ lib64/libcamera_mianode_jni.xiaomi.so
 lib64/libcameraservice.so
 lib64/libmtkisp_metadata_sys.so
 lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
+system_ext/lib64/libcameraimpl.so
+system_ext/lib64/libopencl-camera.so
 system_ext/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 
 # MTK-IMS
