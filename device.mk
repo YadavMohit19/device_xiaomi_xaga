@@ -278,11 +278,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlay \
     NotchBarKiller \
-    SystemUIOverlay \
-    XagaProInFrameworkResOverlay \
     SettingsOverlay\
+    SystemUIOverlay \
     TetheringConfigOverlay \
-    WifiOverlay
+    WifiOverlay \
+    XagaProFrameworkResOverlay \
+    XagaProInFrameworkResOverlay
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
