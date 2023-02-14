@@ -171,6 +171,7 @@ VENDOR_SECURITY_PATCH := 2022-12-01
 # Sepolicy
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SELINUX_IGNORE_NEVERALLOWS := true
 
