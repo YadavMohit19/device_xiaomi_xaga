@@ -396,7 +396,6 @@ PRODUCT_PACKAGES += \
     meta_init.modem.rc \
     meta_init.project.rc \
     multi_init.rc \
-    set_permissive.rc \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \
