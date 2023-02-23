@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    Aperture \
     android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@3.2.vendor \
     android.hardware.camera.device@3.3.vendor \
