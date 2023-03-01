@@ -70,9 +70,6 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1 \
     android.hardware.soundtrigger@2.2
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.a2dp_offload.disabled=true
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
