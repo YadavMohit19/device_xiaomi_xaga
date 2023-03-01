@@ -1080,6 +1080,12 @@ vendor/lib64/libdlbdsservice.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
+
+# EngineerMode
+-priv-app/EngineerMode/EngineerMode.apk
+lib/libem_support_jni.so
+lib64/libem_support_jni.so
+
 # Fingerprint
 vendor/lib/hw/fingerprint.fpc_isee.so
 vendor/lib/hw/fingerprint.goodix.so
