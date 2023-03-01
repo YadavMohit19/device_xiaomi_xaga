@@ -1869,7 +1869,6 @@ vendor/etc/smartpa_param/tfa98xx_ringtone.bin
 vendor/etc/smartpa_param/tfa98xx_voice.bin
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
-vendor/etc/task_profiles.json
 vendor/etc/throttle.sh
 vendor/etc/vendor-apns-conf.xml
 -vendor/etc/vintf/manifest/AHBF@2.1-service.xml
